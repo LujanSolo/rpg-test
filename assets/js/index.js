@@ -1,7 +1,4 @@
-const heroCard = document.getElementById('hero');
-const monsterCard = document.getElementById('monster');
-
-heroHtml = `
+document.getElementById('hero').innerHTML = `
   <div class="character-card">
     <h4 class="name">Wizard</h4>
     <img class="avatar" src="assets/images/wizard.png" alt="fantasy wizard character" loading="lazy"/>
@@ -10,12 +7,10 @@ heroHtml = `
   </div>
 `;
 
-monsterHtml =  `
+document.getElementById('monster').innerHTML = `
   <div class="character-card">
   <h4 class="name"> Orc </h4>
   <img class="avatar" src="assets/images/orc.png"   alt="fantasy orc character" loading="lazy"/>
   <p class="health">health: <b> 10 </b></p>
   <div class="dice-container"><div class="dice"> 4 </div></div>
-`
-heroCard.innerHTML = heroHtml;
-monsterCard.innerHTML = monsterHtml;
+`;
