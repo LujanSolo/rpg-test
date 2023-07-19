@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>RPG TEST</title>
   </head>
 
   <body>
     <main>
-      <div id="hero"></div>
-      <div id="monster"></div>
+      <div id="hero">
+        <div class="character-card">
+          <h4 class="name">Wizard</h4>
+          <img class="avatar" src="./assets/images/wizard.png" alt="fantasy wizard character" loading="lazy"/>
+          <p class="health">health: <b> 60 </b></p>
+          <div class="dice-container"><div class="dice">6</div></div>
+        </div>
+      </div>
+      <div id="monster">
+        <div class="character-card">
+          <h4 class="name"> Orc </h4>
+          <img class="avatar" src="./assets/images/orc.png" alt="fantasy orc character" loading="lazy"/>
+          <p class="health">health: <b> 10 </b></p>
+          <div class="dice-container"><div class="dice"> 4 </div></div>
+      </div>
+      </div>
     </main>
     <section id="actions">
       <button type="button" id="attack-btn">Attack!</button>
