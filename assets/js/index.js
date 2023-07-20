@@ -33,7 +33,7 @@ function Character(data) {
   this.health = data.health;
   this.diceCount = data.diceCount;
   this.getCharacterHtml = () => {
-    const { elementId, name, avatar, health, diceCount } = data;
+    const { elementId, name, avatar, health, diceCount } = this;
   const diceHtml = getDiceHtml(diceCount)
 
   document.getElementById(elementId).innerHTML = `
@@ -49,7 +49,7 @@ function Character(data) {
   }
 };
 
-const sorcerer = new Character(hero)
+const wizard = new Character(hero)
 const orc = new Character(monster)
 
 sorcerer.getCharacterHtml()
