@@ -3,7 +3,6 @@ const hero = {
   name: "Wizard",
   avatar: "assets/images/wizard.png",
   health: 60,
-  diceRoll: [],
   diceCount: 3
 };
 
@@ -12,7 +11,6 @@ const monster = {
   name: "Orc",
   avatar: "assets/images/orc.png",
   health: 10,
-  diceRoll: [],
   diceCount: 1
 };
 
@@ -31,7 +29,7 @@ function getDiceHtml(diceCount){
 };
 
 function renderCharacter(data) {
-  const { elementId, name, avatar, health, diceRoll, diceCount } = data;
+  const { elementId, name, avatar, health, diceCount } = data;
   const diceHtml = getDiceHtml(diceCount)
 
   document.getElementById(elementId).innerHTML = `
