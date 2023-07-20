@@ -27,15 +27,13 @@ const monster = {
 };
 
 function Character(data) {
-  this.elementId = data.elementId,
-  this.name = data.name,
-  this.avatar = data.avatar,
-  this.health = data.health,
-  this.diceCount = data.diceCount
-}
-
-function renderCharacter(data) {
-  const { elementId, name, avatar, health, diceCount } = data;
+  this.elementId = data.elementId;
+  this.name = data.name;
+  this.avatar = data.avatar;
+  this.health = data.health;
+  this.diceCount = data.diceCount;
+  this.getCharacterHtml = () => {
+    const { elementId, name, avatar, health, diceCount } = data;
   const diceHtml = getDiceHtml(diceCount)
 
   document.getElementById(elementId).innerHTML = `
@@ -48,7 +46,11 @@ function renderCharacter(data) {
       </div>
     </div>
   `
+  }
 };
 
-renderCharacter(hero);
-renderCharacter(monster);
+const sorcerer = new Character(hero)
+const orc = new Character(monster)
+
+sorcerer.getCharacterHtml()
+orc.getCharacterHtml()
