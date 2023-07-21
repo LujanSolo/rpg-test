@@ -7,7 +7,7 @@ function Character(data) {
     return getDiceRollArray(diceCount).map(function (num) {
       return `<div class="dice">${num}</div>`
     }).join('')
-  }
+  };
 
   this.getCharacterHtml = function () {
     const { name, avatar, health, diceCount } = this;
