@@ -1,13 +1,13 @@
-function getDiceRollArray(diceCount) {
+function diceRollArray(diceCount) {
   return new Array(diceCount).fill(0).map(() => {
     return Math.floor(Math.random() * 6) + 1;
   });
 };
 
-function getDicePlaceholderHtml(diceCount) {
+function dicePlaceholderHtml(diceCount) {
   return new Array(diceCount).fill(0).map(() => {
     return `<div class="placeholder-dice"></div>`
   }).join("");
 };
 
-export {getDiceRollArray, getDicePlaceholderHtml}
+export {diceRollArray, dicePlaceholderHtml}
