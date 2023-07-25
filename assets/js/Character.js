@@ -12,6 +12,14 @@ function Character(data) {
     }).join('');
   };
 
+  this.takeDamage = (attackScoreArray) => {
+    const totalAttackScore = attackScoreArray.reduce((total, currentElement) => {
+      return total + currentElement;
+    })
+    this.health -= totalAttackScore;
+    console.log(`${this.name} takes ${totalAttackScore} damage from opponent!`)
+  };
+
   this.characterHtml = () => {
     const { name, avatar, health, diceArray } = this;
     
@@ -25,10 +33,6 @@ function Character(data) {
               </div>
           </div>`;
   };
-
-  this.takeDamage = (attackScoreArray) => {
-    console.log(`${this.name} takes ${attackScoreArray} damage from opponent!`)
-  }
 };
 
 export default Character;
