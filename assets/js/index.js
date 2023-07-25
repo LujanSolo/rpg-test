@@ -13,7 +13,14 @@ function attack() {
   orc.takeDamage(wizard.currentDiceScore);
   wizard.takeDamage(orc.currentDiceScore);
   renderToons();
+  if (orc.dead || wizard.dead) {
+    endGame();
+  }
 };
+
+function endGame() {
+  console.log("Game Over")
+}
 
 function renderToons() {
   document.getElementById('hero').innerHTML = wizard.characterHtml();
