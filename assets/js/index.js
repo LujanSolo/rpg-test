@@ -10,6 +10,8 @@ document.getElementById('attack-btn').addEventListener('click', attack);
 function attack() {
   orc.getDiceHtml();
   wizard.getDiceHtml();
+  orc.takeDamage(wizard.currentDiceScore);
+  wizard.takeDamage(orc.currentDiceScore);
   renderToons();
 };
 

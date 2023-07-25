@@ -13,7 +13,7 @@ function Character(data) {
   };
 
   this.characterHtml = () => {
-    const { name, avatar, health, diceCount, diceArray } = this;
+    const { name, avatar, health, diceArray } = this;
     
     return `
           <div class="character-card">
@@ -24,6 +24,10 @@ function Character(data) {
                   ${diceArray}
               </div>
           </div>`;
+  };
+
+  this.takeDamage = (attackScoreArray) => {
+    console.log(`${this.name} takes ${attackScoreArray} damage from opponent!`)
   }
 };
 
