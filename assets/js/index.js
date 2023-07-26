@@ -19,7 +19,8 @@ function attack() {
 };
 
 function endGame() {
-  console.log("Game Over")
+  const endMessage = wizard.health > orc.health ? "The Wizard Wins" : orc.health > wizard.health ? "The Orc feasts tonight!" : "No victors here."
+  console.log(endMessage);
 }
 
 function renderToons() {
