@@ -19,7 +19,15 @@ function attack() {
 };
 
 function endGame() {
-  const endMessage = wizard.health > orc.health ? "The Wizard Wins" : orc.health > wizard.health ? "The Orc feasts tonight!" : "No victors here."
+  const endMessage = wizard.health > orc.health ? "The Wizard Wins" : orc.health > wizard.health ? "The Orc feasts tonight!" : "No victors here.";
+  const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
+  document.body.innerHTML = `
+    <div class="end-game">
+      <h2>Game Over</h2>
+      <h3>${endMessage}</h3>
+      <p class="end-emoji">${endEmoji}</p>
+    </div>
+  `
   console.log(endMessage);
 }
 
