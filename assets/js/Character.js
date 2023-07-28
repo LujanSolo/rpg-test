@@ -39,13 +39,13 @@ function Character(data) {
     const healthBar = this.getHealthBar();
     return `
           <div class="character-card">
-              <h4 class="name"> ${name} </h4>
-              <img class="avatar" src="${avatar}" />
-              <div class="health">health: <b> ${health} </b></div>
-              ${healthBar}
-              <div class="dice-container">
-                  ${diceArray}
-              </div>
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}" />
+            <p class="healthcount">health: <b> ${health} </b></p>
+            <p class="bar">${healthBar}</p>
+            <div class="dice-container box">
+              ${diceArray}
+            </div>
           </div>`;
   };
 };
