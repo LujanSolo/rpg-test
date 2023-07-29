@@ -7,6 +7,10 @@ const orc = new Character(characterData.monster);
 
 document.getElementById('attack-btn').addEventListener('click', attack);
 
+// function getOpponent() {
+//   const nextOpponentData = 
+// }
+
 function attack() {
   orc.getDiceHtml();
   wizard.getDiceHtml();
