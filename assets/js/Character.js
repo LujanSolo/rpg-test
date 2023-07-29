@@ -1,5 +1,4 @@
-import { diceRollArray, dicePlaceholderHtml } from './utils.js';
-const getPercentage = (currentHealth, maximumHealth) => Math.floor((100 * currentHealth) / maximumHealth);
+import { diceRollArray, dicePlaceholderHtml, getPercentage } from './utils.js';
 
 function Character(data) {
   Object.assign(this, data)
