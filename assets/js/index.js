@@ -15,8 +15,8 @@ function getNextMonster() {
 
 function attack() {
   if (!disableButton) {
-    monster.getDiceHtml();
-    wizard.getDiceHtml();
+    monster.setDiceHtml();
+    wizard.setDiceHtml();
     monster.takeDamage(wizard.currentDiceScore);
     wizard.takeDamage(monster.currentDiceScore);
     render();
@@ -56,8 +56,8 @@ function endGame() {
 }
 
 function render() {
-  document.getElementById('hero').innerHTML = wizard.characterHtml();
-  document.getElementById('monster').innerHTML = monster.characterHtml();
+  document.getElementById('hero').innerHTML = wizard.getCharacterHtml();
+  document.getElementById('monster').innerHTML = monster.getCharacterHtml();
 }
 
 render();
