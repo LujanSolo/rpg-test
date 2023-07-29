@@ -37,15 +37,15 @@ function Character(data) {
     const { name, avatar, health, diceArray } = this;
     const healthBar = this.getHealthBar();
     return `
-          <div class="character-card">
-            <h4 class="name"> ${name} </h4>
-            <img class="avatar" src="${avatar}" />
-            <p class="healthcount">health: <b> ${health} </b></p>
-            <p class="bar">${healthBar}</p>
-            <div class="dice-container box">
-              ${diceArray}
-            </div>
-          </div>`;
+      <div class="character-card">
+        <h4 class="name"> ${name} </h4>
+        <img class="avatar" src="${avatar}" />
+        <div class="health">health: <b> ${health} </b></div>
+        ${healthBar}
+        <div class="dice-container">
+            ${this.diceArray}
+        </div>
+        </div>`;
   };
 };
 

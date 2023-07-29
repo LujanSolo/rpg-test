@@ -9,8 +9,8 @@ const orc = new Character(characterData.monster);
 document.getElementById('attack-btn').addEventListener('click', attack);
 
 function getNextOpponent() {
-  const nextCharData = opponentArray.shift().characterHtml();
-}
+  const nextCharData = characterData[opponentArray.shift()]
+};
 
 function attack() {
   orc.getDiceHtml();
