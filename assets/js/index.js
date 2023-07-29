@@ -18,31 +18,35 @@ function attack() {
   monster.takeDamage(wizard.currentDiceScore);
   wizard.takeDamage(monster.currentDiceScore);
   render();
-  if(wizard.dead){
+  if (wizard.dead) {
     endGame();
   }
-  else if(monster.dead){
-    if(monsterArray.length > 0){
-      monster = getNextMonster();
-      render();
-    }
-    else{
-      endGame();
-    }
-  }
+  else if (monster.dead) {
+    setTimeout(() => {
+      if (monsterArray.length > 0) {
+        setTimeout
+        monster = getNextMonster();
+        render();
+      }
+      else {
+        endGame();
+      }
+    }, 1000);
+
+  };
 };
 
 function endGame() {
   const endMessage = wizard.health > monster.health ? "The Wizard Wins" : monster.health > wizard.health ? "The monster feasts tonight!" : "No victors here.";
   const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
-  document.body.innerHTML = `
+  setTimeout(() => {
+    document.body.innerHTML = `
     <div class="end-game">
       <h2>Game Over</h2>
       <h3>${endMessage}</h3>
       <p class="end-emoji">${endEmoji}</p>
-    </div>
-  `
-  console.log(endMessage);
+    </div>`
+  }, 1500);
 }
 
 function render() {
