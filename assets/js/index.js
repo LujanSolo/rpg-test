@@ -4,6 +4,7 @@ import Character from './Character.js';
 const monsterArray = ["orc", "demon", "goblin"];
 const wizard = new Character(characterData.hero);
 let monster = getNextMonster();
+let disableButton = false;
 
 document.getElementById('attack-btn').addEventListener('click', attack);
 
@@ -13,30 +14,35 @@ function getNextMonster() {
 };
 
 function attack() {
-  monster.getDiceHtml();
-  wizard.getDiceHtml();
-  monster.takeDamage(wizard.currentDiceScore);
-  wizard.takeDamage(monster.currentDiceScore);
-  render();
-  if (wizard.dead) {
-    endGame();
-  }
-  else if (monster.dead) {
-    setTimeout(() => {
+  if (!disableButton) {
+    monster.getDiceHtml();
+    wizard.getDiceHtml();
+    monster.takeDamage(wizard.currentDiceScore);
+    wizard.takeDamage(monster.currentDiceScore);
+    render();
+    if (wizard.dead) {
+      endGame();
+    }
+    else if (monster.dead) {
+      disableButton = true;
       if (monsterArray.length > 0) {
-        setTimeout
-        monster = getNextMonster();
-        render();
+        setTimeout(() => {
+          monster = getNextMonster()
+          render();
+          disableButton = false;
+        }, 1500);
+
       }
       else {
-        endGame();
-      }
-    }, 1000);
+        endGame()
+      };
+    }
+  }
 
-  };
 };
 
 function endGame() {
+  disableButton = true;
   const endMessage = wizard.health > monster.health ? "The Wizard Wins" : monster.health > wizard.health ? "The monster feasts tonight!" : "No victors here.";
   const endEmoji = wizard.health > 0 ? "🔮" : "☠️";
   setTimeout(() => {
